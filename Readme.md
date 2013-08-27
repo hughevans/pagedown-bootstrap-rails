@@ -29,6 +29,7 @@ Or individually as you please:
     //= require markdown.converter
     //= require markdown.editor
     //= require markdown.sanitizer
+    //= require markdown.extra
 
 You will need to instantiate PageDown. I recommend a `lib/assets/javascripts/pagedown_init.js.coffee` that contains:
 
