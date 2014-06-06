@@ -382,7 +382,6 @@
         // Find and convert Markdown Extra tables into html.
     Markdown.Extra.prototype.tables = function(text) {
 
-        alert('Tables');
         var self = this;
 
         var leadingPipe = new RegExp(
@@ -856,7 +855,6 @@
 
     Markdown.Extra.prototype.strikethrough = function(text) {
         // Pretty much duplicated from _DoItalicsAndBold
-        alert('Strike');
         return text.replace(/([\W_]|^)~T~T(?=\S)([^\r]*?\S[\*_]*)~T~T([\W_]|$)/g,
             "$1<del>$2</del>$3");
     };
