@@ -1399,7 +1399,7 @@
             buttons.olist = makeButton("wmd-olist-button", "<%= I18n.t('components.markdown_editor.numbered_list.button_title', default: 'Numbered List (Ctrl+O)') %>", "fa fa-list-ol", bindCommand(function (chunk, postProcessing) {
                 this.doList(chunk, postProcessing, true);
             }), group3);
-            buttons.heading = makeButton("wmd-heading-button", "<%= I18n.t('components.markdown_editor.heading.button_title', default: 'Heading (Ctrl+H)') %>", "glyphicon glyphicon-header", bindCommand("doHeading"), group3);
+            buttons.heading = makeButton("wmd-heading-button", "<%= I18n.t('components.markdown_editor.heading.button_title', default: 'Heading (Ctrl+H)') %>", "fa fa-font", bindCommand("doHeading"), group3);
 
             group4 = makeGroup(4);
             buttons.undo = makeButton("wmd-undo-button", "<%= I18n.t('components.markdown_editor.undo.button_title', default: 'Undo (Ctrl+Z)') %>", "fa fa-undo", null, group4);
