@@ -59,7 +59,7 @@ I like to then use a new [SimpleForm](https://github.com/plataformatec/simple_fo
       def input
         out = "<div id=\"wmd-button-bar-#{attribute_name}\"></div>\n"
         out << "#{@builder.text_area(attribute_name, input_html_options.merge(
-          { :class => 'wmd-input', :id => "wmd-input-#{attribute_name}"})) }"
+          { :class => 'wmd-input form-control', :id => "wmd-input-#{attribute_name}"})) }"
         if input_html_options[:preview]
           out << "<div id=\"wmd-preview-#{attribute_name}\" class=\"wmd-preview\"></div>"
         end
@@ -69,7 +69,7 @@ I like to then use a new [SimpleForm](https://github.com/plataformatec/simple_fo
 
 Which you use in your form like so:
 
-    = f.input :description, :as => :pagedown, :input_html => { :preview => true }
+    = f.input :description, as: :pagedown, input_html: { preview: true, rows: 20 }
 
 This is how it looks:
 
