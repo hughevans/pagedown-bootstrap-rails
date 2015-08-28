@@ -20,7 +20,7 @@ Require the CSS with Sprockets:
 /*= require pagedown_bootstrap */
 ```
 
-Or with a SASS import:
+Or with an SCSS import:
 
 ``` scss
 @import "pagedown_bootstrap";
