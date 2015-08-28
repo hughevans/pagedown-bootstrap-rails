@@ -65,6 +65,8 @@ Just require it after `pagedown_bootstrap`:
 //= require pagedown_init
 ```
 
+This obviously requires CoffeeScript and jQuery, so if you’re not using these then feel free to write your own initializer.
+
 ## SimpleForm
 
 Here’s a [SimpleForm](https://github.com/plataformatec/simple_form) input that creates the correct HTML for the initializer above.
