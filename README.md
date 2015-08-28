@@ -67,7 +67,7 @@ Just require it with Sprockets after `pagedown_bootstrap`:
 //= require pagedown_init
 ```
 
-## [SimpleForm](https://github.com/plataformatec/simple_form) Integration
+## SimpleForm Integration
 I like to then use a new [SimpleForm](https://github.com/plataformatec/simple_form) input:
 
 ``` ruby
@@ -101,4 +101,4 @@ Which you use in your form like so:
 
 This is how it looks:
 
-![Glorious](http://f.cl.ly/items/1f2H1x1F1D0o0n2r1p02/pagedown-bootstrap.png)
+![Glorious](https://cldup.com/zCzX0kUgrW.png)
