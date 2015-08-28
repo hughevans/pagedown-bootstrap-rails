@@ -41,7 +41,7 @@ Or individually as you please:
   //= require markdown.extra
 ```
 
-You will need to instantiate PageDown and pagedown-bootstrap-rails comes with `pagedown_init` for you to optionally include:
+You will need to initialize PageDown in your form, so PageDown Bootstrap Rails comes with `pagedown_init` for you to optionally include:
 
 ``` coffee
   $ ->
@@ -58,15 +58,16 @@ You will need to instantiate PageDown and pagedown-bootstrap-rails comes with `p
       editor.run()
 ```
 
-Just require it with Sprockets after `pagedown_bootstrap`:
+Just require it after `pagedown_bootstrap`:
 
 ``` javascript
 //= require pagedown_bootstrap
 //= require pagedown_init
 ```
 
-## SimpleForm Integration
-I like to then use a new [SimpleForm](https://github.com/plataformatec/simple_form) input:
+## SimpleForm
+
+Here’s a [SimpleForm](https://github.com/plataformatec/simple_form) input that creates the correct HTML for the initializer above.
 
 ``` ruby
 class PagedownInput < SimpleForm::Inputs::TextInput
@@ -95,7 +96,9 @@ end
 
 Which you use in your form like so:
 
-    = f.input :description, as: :pagedown, input_html: { preview: true, rows: 20 }
+``` ruby
+= f.input :description, as: :pagedown, input_html: { preview: true, rows: 10 }
+```
 
 This is how it looks:
 
