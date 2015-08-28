@@ -10,8 +10,6 @@ Add to your `Gemfile`:
 gem 'pagedown-bootstrap-rails'
 ```
 
-In Rails 3.1 or Rails 3.2 this goes in the `:asset` group, but in Rails 4 it goes with the top level gems.
-
 You’ll also need Bootstrap 3 (Sass version) and Font Awesome.
 
 ## Usage
