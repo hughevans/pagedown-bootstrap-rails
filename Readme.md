@@ -7,6 +7,9 @@ A Ruby gem version of [https://github.com/tchapi/pagedown-bootstrap](https://git
 Add to your `Gemfile`:
 
     gem 'pagedown-bootstrap-rails'
+    gem 'bootstrap-sass' # check version
+    gem 'sass-rails', # check version
+    gem 'font-awesome-rails'
 
 In Rails 3.1 or Rails 3.2 this goes in the `:asset` group, but in Rails 4 it goes with the top level gems.
 
@@ -53,6 +56,7 @@ Just require it with Sprockets after `pagedown_bootstrap`:
     //= require pagedown_bootstrap
     //= require pagedown_init
 
+## [SimpleForm](https://github.com/plataformatec/simple_form) Integration
 I like to then use a new [SimpleForm](https://github.com/plataformatec/simple_form) input:
 
     class PagedownInput < SimpleForm::Inputs::TextInput
@@ -80,3 +84,32 @@ Which you use in your form like so:
 This is how it looks:
 
 ![Glorious](http://f.cl.ly/items/1f2H1x1F1D0o0n2r1p02/pagedown-bootstrap.png)
+
+## [Formtastic](https://github.com/plataformatec/simple_form) Integration
+
+    class PagedownInput < Formtastic::Inputs::StringInput
+    
+      def input_html_options
+        super.merge(:class => "wmd-input", :id => "1")
+      end
+    
+      def to_html
+        id = input_html_options[:id]
+        options = input_html_options.merge(id: "wmd-input-#{id}")
+    
+        input_wrapping do
+          label_html <<
+              template.content_tag(:div, "", :class => 'wmd-panel') do
+                template.content_tag(:div, "", :class => 'wmd-button-bar', id: "wmd-button-bar-#{id}") <<
+                    builder.text_area(method, options)
+              end <<
+    
+              template.content_tag(:div, "", :style=> 'margin-top:20px' ) do
+                template.content_tag(:label, "Preview" ) <<
+                    template.content_tag(:div, "", :class => "wmd-panel wmd-preview", id: "wmd-preview-#{id}")
+    
+    
+              end
+        end.html_safe
+      end
+    end
