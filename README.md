@@ -65,7 +65,8 @@ Just require it after `pagedown_bootstrap`:
 //= require pagedown_init
 ```
 
-This obviously requires CoffeeScript and jQuery, so if you’re not using these then feel free to write your own initializer.
+This obviously requires CoffeeScript and jQuery, so if you’re not using these then feel free to write your own initializer. Additionally, if you’re using Turbolinks then I suggest either using [jQuery Turbolinks](https://github.com/kossnocorp/jquery.turbolinks) or writing
+your own initializer that does not rely on `jQuery.ready()` like the one above.
 
 ## SimpleForm
 
