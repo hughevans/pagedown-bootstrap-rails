@@ -75,10 +75,10 @@ Here’s a [SimpleForm](https://github.com/plataformatec/simple_form) input that
 ``` ruby
 class PagedownInput < SimpleForm::Inputs::TextInput
   def input
-    out = "<div id=\"wmd-button-bar-#{attribute_name}\"></div>\n#{wmd_input}"
+    out = "<div id=\"wmd-button-bar-#{attribute_name}\"></div>#{wmd_input}"
 
     if input_html_options[:preview]
-      out << "\n<div id=\"wmd-preview-#{attribute_name}\" class=\"wmd-preview\"></div>"
+      out << "<div id=\"wmd-preview-#{attribute_name}\" class=\"wmd-preview\"></div>"
     end
 
     out.html_safe
