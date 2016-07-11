@@ -1378,11 +1378,11 @@
                 return group
             };
 
-            group1 = makeGroup(1);
+            var group1 = makeGroup(1);
             buttons.bold = makeButton("wmd-bold-button", "<%= I18n.t('components.markdown_editor.bold.button_title', default: 'Bold (Ctrl+B)') %>", "fa fa-bold", bindCommand("doBold"), group1);
             buttons.italic = makeButton("wmd-italic-button", "<%= I18n.t('components.markdown_editor.italic.button_title', default: 'Italic (Ctrl+I)') %>", "fa fa-italic", bindCommand("doItalic"), group1);
 
-            group2 = makeGroup(2);
+            var group2 = makeGroup(2);
             buttons.link = makeButton("wmd-link-button", "<%= I18n.t('components.markdown_editor.insert_link.button_title', default: 'Link (Ctrl+L)') %>", "fa fa-link", bindCommand(function (chunk, postProcessing) {
                 return this.doLinkOrImage(chunk, postProcessing, false);
             }), group2);
@@ -1392,7 +1392,7 @@
             buttons.quote = makeButton("wmd-quote-button", "<%= I18n.t('components.markdown_editor.blockquoute.button_title', default: 'Blockquote (Ctrl+Q)') %>", "fa fa-quote-left", bindCommand("doBlockquote"), group2);
             buttons.code = makeButton("wmd-code-button", "<%= I18n.t('components.markdown_editor.code_sample.button_title', default: 'Code Sample (Ctrl+K)') %>", "fa fa-code", bindCommand("doCode"), group2);
 
-            group3 = makeGroup(3);
+            var group3 = makeGroup(3);
             buttons.ulist = makeButton("wmd-ulist-button", "<%= I18n.t('components.markdown_editor.bulleted_list.button_title', default: 'Bulleted List (Ctrl+U)') %>", "fa fa-list-ul", bindCommand(function (chunk, postProcessing) {
                 this.doList(chunk, postProcessing, false);
             }), group3);
@@ -1401,7 +1401,7 @@
             }), group3);
             buttons.heading = makeButton("wmd-heading-button", "<%= I18n.t('components.markdown_editor.heading.button_title', default: 'Heading (Ctrl+H)') %>", "fa fa-font", bindCommand("doHeading"), group3);
 
-            group4 = makeGroup(4);
+            var group4 = makeGroup(4);
             buttons.undo = makeButton("wmd-undo-button", "<%= I18n.t('components.markdown_editor.undo.button_title', default: 'Undo (Ctrl+Z)') %>", "fa fa-undo", null, group4);
             buttons.undo.execute = function (manager) { if (manager) manager.undo(); };
 
@@ -1413,7 +1413,7 @@
             buttons.redo.execute = function (manager) { if (manager) manager.redo(); };
 
             if (helpOptions) {
-                group5 = makeGroup(5);
+                var group5 = makeGroup(5);
                 group5.className = group5.className + " pull-right";
                 var helpButton = document.createElement("button");
                 var helpButtonImage = document.createElement("i");
