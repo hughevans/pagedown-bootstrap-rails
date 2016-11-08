@@ -87,10 +87,12 @@ class PagedownInput < SimpleForm::Inputs::TextInput
   private
 
   def wmd_input
+    classes = input_html_options[:class] || []
+    classes << 'wmd-input form-control'
     @builder.text_area(
       attribute_name,
       input_html_options.merge(
-        class: 'wmd-input form-control', id: "wmd-input-#{attribute_name}"
+        class: classes, id: "wmd-input-#{attribute_name}"
       )
     )
   end
